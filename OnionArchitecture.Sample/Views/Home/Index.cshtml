@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Domain.Entity.User>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Onion Architecture Sample</h1>
+
+            </hgroup>
+            <p>
+                This is the sample app outlining Onion Architecture principles. <br />
+                The table data shown below is fetched from Infrastructure/Repository
+            </p>
+        </div>
+    </section>
+}
+
+<table>
+    <tr>
+        <th>Username</th>
+
+        <th>Email</th>
+        <th>Password</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+
+        </tr>
+    }
+</table>
